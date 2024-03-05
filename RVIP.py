@@ -83,7 +83,7 @@ nStim = int(np.ceil((duration*rateMin)/float(targetLen))*float(targetLen))
 stims=np.zeros(nStim).tolist()
 
 # create a binary list that will indicate when we expect a keypress
-response = np.zeros(nStim,dtype=np.int)
+response = np.zeros(nStim,dtype=np.int64)
 
 # we want to ensure that we have 32 stims, which is kind of hard to do
 # randomly (i tried for a loooong time), so what constructed a spacing
@@ -448,7 +448,7 @@ for thisTrial in trials:
     t = 0
     trialClock.reset()  # clock 
     frameN = -1
-    routineTimer.add(0.600000)
+    routineTimer.addTime(0.600000)
 
     trialComponents = []
     trialComponents.append(stim_text)
@@ -656,7 +656,7 @@ logging.log(level=logging.EXP, msg="A': %f"%(stim_stat_Aprime))
 t = 0
 ThanksClock.reset()  # clock 
 frameN = -1
-routineTimer.add(2.000000)
+routineTimer.addTime(2.000000)
 # update component parameters for each repeat
 # keep track of which components have finished
 ThanksComponents = []
